@@ -29,6 +29,8 @@ const Port = process.env.PORT;
 app.get('/', (req,res)=>{
   res.send("settttttttUpppppppp")
 })
-app.listen(Port, ()=>{
-  console.log("AP working")
-})
+// app.listen(Port, ()=>{
+//   console.log("AP working")
+// })
+
+export default app;
