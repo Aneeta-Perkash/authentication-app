@@ -14,6 +14,13 @@ const app = express();
 app.use(bodyParser.json());
  // app.use(cors());
 
+// ✅ CORS config — multiple origins allow karo
+const allowedOrigins = [
+  "http://localhost:5173",                   // Local development
+  process.env.FRONTEND_URL                   // Vercel deployed frontend
+];
+
+
 // 👇 cors ko yahan configure karo
 app.use(cors({
   origin: process.env.FRONTEND_URL,  // frontend ka vercel URL .env me rakho
@@ -29,8 +36,6 @@ const Port = process.env.PORT;
 app.get('/', (req,res)=>{
   res.send("settttttttUpppppppp")
 })
-// app.listen(Port, ()=>{
-//   console.log("AP working")
-// })
+
 
 export default app;
