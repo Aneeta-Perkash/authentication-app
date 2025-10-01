@@ -12,7 +12,15 @@ const app = express();
 
 // middle ware
 app.use(bodyParser.json());
-app.use(cors());
+ // app.use(cors());
+
+// 👇 cors ko yahan configure karo
+app.use(cors({
+  origin: process.env.FRONTEND_URL,  // frontend ka vercel URL .env me rakho
+  credentials: true
+}));
+
+
 app.use('/auth',AuthRouter )
 // app.use('/products',ProductRouter)
 
